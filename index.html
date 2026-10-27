@@ -288,11 +288,11 @@
 </div>
 
 <footer class="footer">
-    Temperaturmodell basert på termodynamikk og historiske data fra 2025 &middot; Værdata: Meteorologisk Institutt / Yr.no
+    Temperaturmodell basert på termodynamikk og historiske data fra 2025 &middot; Værdata: Meteorologisk Institutt / Yr.no.
     Solinnstråling (Kasten-Czeplak, 60°N) som varmer vannet ekstra om sommeren. 
-    Fordampningskjøling når vannet er varmere enn lufta
+    Fordampningskjøling når vannet er varmere enn lufta.
     Vind påvirker isdannelse og hvor raskt vannet kjøles ned.
-    Is-logikk med isvekst, snøisolasjon og gradvis oppvarming etter isgang
+    Is-logikk med isvekst, snøisolasjon og gradvis oppvarming etter isgang.
     Termisk tidskonstant τ ≈ 6–7 dager (basert på 2 m blandingslag)
 </footer>
 
@@ -811,9 +811,8 @@ function formatDate(dateStr) {
 
 function tempNote(t) {
     if (t === 0) return '❄️ Islagt';
-    if (t < 10)  return 'Kaldt – kun for de tøffe!';
-    if (t < 16)  return 'Friskt, men badbart';
-    return 'Godt badetemperatur!';
+    if (t > 18)  return 'Varmt';
+    return 'God svømmetur';
 }
 
 // ── STATE ─────────────────────────────────────────────────────────────────
@@ -945,14 +944,14 @@ function renderChart(csvMeasurements) {
                     parsing: { xAxisKey: 'x', yAxisKey: 'y' }
                 },
                 {
-                    label: 'Dine målinger 2026',
+                    label: 'Dine målinger',
                     data: points2026,
-                    borderColor: '#0d3a5c',
-                    backgroundColor: '#0d3a5c',
+                    borderColor: '#268cb3',
+                    backgroundColor: '#268cb3',
                     borderWidth: 2.5,
                     pointRadius: 5,
                     pointHoverRadius: 7,
-                    pointBackgroundColor: '#0d3a5c',
+                    pointBackgroundColor: '#268cb3',
                     tension: 0.3,
                     fill: false,
                     order: 1,
